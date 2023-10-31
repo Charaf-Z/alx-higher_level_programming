@@ -2,7 +2,7 @@
 """Defines a locked class with restricted attribute creation."""
 
 
-class lockedClass:
+class LockedClass:
     """
     A class that allows the creation of only one instance attribute,\
     ``first_name``.
@@ -12,4 +12,4 @@ class lockedClass:
             attribute creation.
     """
 
-    __slots__ = ["firt_name"]
+    __slots__ = ["first_name"]
