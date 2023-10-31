@@ -2,7 +2,7 @@
 """copy_list module."""
 
 
-def copy_list(l1) -> list:
+def copy_list(l) -> list:
     """
     Create a copy of list.
 
@@ -12,4 +12,4 @@ def copy_list(l1) -> list:
     Returns:
         list: A copy of the input list.
     """
-    return l1.copy()
+    return l.copy()
