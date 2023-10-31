@@ -1,4 +1,4 @@
 #!/use/bin/python3
 def magic_string() -> str:
-    magic_string.n = getattr(magic_string, 'n', 0) + 1
-    return "BestSchool, " * (magic_string.n - 1) + "BestSchool"
+    magic_string.nbr = getattr(magic_string, 'nbr', 0) + 1
+    return "BestSchool, " * (magic_string.nbr - 1) + "BestSchool"
