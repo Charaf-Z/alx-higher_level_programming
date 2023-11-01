@@ -19,21 +19,21 @@ First Name Only:
 ::
 
     >>> say_my_name("Bob")
-    My name is Bob
+    My name is Bob 
 
 Empty First Name:
 
 ::
 
     >>> say_my_name("", "Davis")
-    My name is Davis
+    My name is  Davis
 
 Empty Last Name:
 
 ::
 
     >>> say_my_name("Ella", "")
-    My name is Ella
+    My name is Ella 
 
 First Name as a Number (TypeError Expected):
 
@@ -101,21 +101,21 @@ Test firstname:
 ::
 
     >>> say_my_name("Jack")
-    My name is Jack
+    My name is Jack 
 
 Test lastname empty:
 
 ::
 
     >>> say_my_name("Katie", "")
-    My name is Katie
+    My name is Katie 
 
 Test both names empty:
 
 ::
 
     >>> say_my_name("", "")
-    My name is
+    My name is  
 
 Test just spaces:
 
@@ -129,7 +129,7 @@ Test empty firstname:
 ::
 
     >>> say_my_name("", "Leo")
-    My name is Leo
+    My name is  Leo
 
 Test not a string in arg1 (TypeError Expected):
 

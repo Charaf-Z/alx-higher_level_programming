@@ -24,6 +24,10 @@ class TestMaxInteger(unittest.TestCase):
         """Test when given an unsorted list of integers."""
         self.assertEqual(max_integer([2, 8, 9, 2, 1]), 9)
 
+    def test_max_first_lis(self) -> None:
+        """Test when Max number is at beginning."""
+        self.assertEqual(max_integer([8, 5, 1]), 8)
+
     def test_only_one(self) -> None:
         """Test when there's only one element in the list."""
         self.assertEqual(max_integer([8]), 8)
