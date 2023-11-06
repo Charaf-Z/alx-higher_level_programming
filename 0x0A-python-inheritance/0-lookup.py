@@ -2,7 +2,7 @@
 """A module to look up attributes and methods of objects."""
 
 
-def lookup(obj) -> list[str]:
+def lookup(obj) -> list:
     """
     Return a list of attributes and methods of the given object.
 

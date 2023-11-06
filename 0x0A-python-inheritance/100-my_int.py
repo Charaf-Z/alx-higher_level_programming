@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a custom MyInt class that inherits ``int``."""
 
+
 class MyInt(int):
     """
     MyInt class, a subclass of int.
