@@ -16,9 +16,9 @@ def print_line(size: int, status_codes: dict) -> None:
             of specific HTTP status codes.
     """
     print("File size: {}".format(size))
-    for k, v in status_codes.items():
+    for k, v in sorted(status_codes.items()):
         if v > 0:
-            print("{:s}: {:d}".format(k, v))
+            print("{}: {}".format(k, v))
     pass
 
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
             splited_line = line.split()
             if len(splited_line) >= 2:
                 status = splited_line[-2]
-                size = int(splited_line[-1])
+                size += int(splited_line[-1])
                 if status in status_codes:
                     status_codes[status] += 1
             count += 1
