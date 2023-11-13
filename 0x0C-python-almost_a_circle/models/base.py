@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-"""Defines a base model class."""
+"""Module for Base class."""
 from json import dumps, loads
 from csv import DictWriter, DictReader
 import turtle
 
 
 class Base:
-    """Base class for managing shapes.
-
-    Attributes:
-        __nb_objects (int): The number of instantiated Bases.
-    """
+    """A representation of the base of our OOP hierarchy."""
 
     __nb_objects = 0
 
-    def __init__(self, id=None):
+    def __init__(self, id=None) -> None:
         """Initialize a Base instance.
 
         Args:
@@ -28,7 +24,7 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to_json_string(list_dictionaries):
+    def to_json_string(list_dictionaries) -> str:
         """Convert a list of dictionaries to a JSON-formatted string.
 
         Args:
@@ -54,7 +50,7 @@ class Base:
                 fp.write(Base.to_json_string(list_dicts))
 
     @staticmethod
-    def from_json_string(json_string):
+    def from_json_string(json_string) -> list:
         """Convert a JSON-formatted string to a list of dictionaries.
 
         Args:
@@ -80,7 +76,7 @@ class Base:
             return new_instance
 
     @classmethod
-    def load_from_file(cls):
+    def load_from_file(cls) -> list:
         """Load a list of objects from a JSON file."""
         filename = cls.__name__ + ".json"
         try:
@@ -91,7 +87,7 @@ class Base:
             return []
 
     @classmethod
-    def save_to_file_csv(cls, list_objs):
+    def save_to_file_csv(cls, list_objs) -> None:
         """Save a list of objects to a CSV file.
 
         Args:
@@ -111,7 +107,7 @@ class Base:
                     toWrite.writerow(obj.to_dictionary())
 
     @classmethod
-    def load_from_file_csv(cls):
+    def load_from_file_csv(cls) -> list:
         """Load a list of objects from a CSV file."""
         filename = cls.__name__ + ".csv"
         try:
@@ -130,7 +126,7 @@ class Base:
             return []
 
     @staticmethod
-    def draw(list_rectangles, list_squares):
+    def draw(list_rectangles, list_squares) -> None:
         """Draw rectangles and squares using the turtle graphics library.
 
         Args:
