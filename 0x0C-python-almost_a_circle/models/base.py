@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-"""Module for Base class."""
-from json import dumps, loads
-from csv import DictWriter, DictReader
+"""Defines a base model class."""
+import json
+import csv
 import turtle
 
 
 class Base:
-    """A representation of the base of our OOP hierarchy."""
+    """Base class for managing shapes.
+
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
+    """
 
     __nb_objects = 0
 
@@ -32,7 +36,7 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -58,7 +62,7 @@ class Base:
         """
         if json_string is None or json_string == "[]":
             return []
-        return loads(json_string)
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
@@ -102,7 +106,7 @@ class Base:
                     fieldname = ["id", "width", "height", "x", "y"]
                 else:
                     fieldname = ["id", "size", "x", "y"]
-                toWrite = DictWriter(fp, fieldnames=fieldname)
+                toWrite = csv.DictWriter(fp, fieldnames=fieldname)
                 for obj in list_objs:
                     toWrite.writerow(obj.to_dictionary())
 
@@ -116,7 +120,7 @@ class Base:
                     fieldname = ["id", "width", "height", "x", "y"]
                 else:
                     fieldname = ["id", "size", "x", "y"]
-                list_dicts = DictReader(fp, fieldnames=fieldname)
+                list_dicts = csv.DictReader(fp, fieldnames=fieldname)
                 list_dicts = [
                     dict([key, int(value)] for key, value in d.items())
                     for d in list_dicts
