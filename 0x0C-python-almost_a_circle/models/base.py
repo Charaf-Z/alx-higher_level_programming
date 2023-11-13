@@ -39,7 +39,7 @@ class Base:
         return dumps(list_dictionaries)
 
     @classmethod
-    def save_to_file(cls, list_objs) -> None:
+    def save_to_file(cls, list_objs):
         """Save a list of objects to a JSON file.
 
         Args:
@@ -65,11 +65,11 @@ class Base:
         return loads(json_string)
 
     @classmethod
-    def create(cls, **dictionary) -> 'Base':
+    def create(cls, **dictionary):
         """Create a new instance based on a dictionary.
 
         Args:
-            dictionary (dict): Dictionary containing object attributes.
+            **dictionary (dict): Dictionary containing object attributes.
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
