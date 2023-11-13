@@ -85,7 +85,8 @@ class Base:
                 new_instance = cls(1, 1)
             else:
                 new_instance = cls(1)
-            return new_instance.update(**dictionary)
+            new_instance.update(**dictionary)
+            return new_instance
 
     @classmethod
     def load_from_file(cls) -> list:
@@ -123,7 +124,7 @@ class Base:
                     toWrite.writerow(obj.to_dictionary())
 
     @classmethod
-    def load_from_csv(cls) -> list:
+    def load_from_file_csv(cls) -> list:
         """Load a list of objects from a CSV file.
 
         Returns:
