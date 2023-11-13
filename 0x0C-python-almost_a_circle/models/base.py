@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""Module with a Base class and utility functions for working with shapes."""
+"""Defines a base model class."""
 from json import dumps, loads
 from csv import DictWriter, DictReader
 import turtle
 
 
 class Base:
-    """
-    Base class for managing shapes.
+    """Base class for managing shapes.
 
     Attributes:
         __nb_objects (int): The number of instantiated Bases.
