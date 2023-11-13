@@ -7,7 +7,12 @@ import turtle
 
 
 class Base:
-    """Base class for managing shapes."""
+    """
+    Base class for managing shapes.
+
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
+    """
 
     __nb_objects = 0
 
@@ -39,7 +44,7 @@ class Base:
         return dumps(list_dictionaries)
 
     @classmethod
-    def save_to_file(cls, list_objs) -> int:
+    def save_to_file(cls, list_objs) -> None:
         """Save a list of objects to a JSON file.
 
         Args:
