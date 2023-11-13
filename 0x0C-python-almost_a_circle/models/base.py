@@ -34,9 +34,6 @@ class Base:
 
         Args:
             list_dictionaries (list): List of dictionaries to convert.
-
-        Returns:
-            str: JSON-formatted string.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
@@ -48,9 +45,6 @@ class Base:
 
         Args:
             list_objs (list): List of objects to save.
-
-        Returns:
-            int: The number of characters written to the file.
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as fp:
@@ -66,9 +60,6 @@ class Base:
 
         Args:
             json_string (str): JSON-formatted string.
-
-        Returns:
-            list: List of dictionaries.
         """
         if json_string is None or json_string == "[]":
             return []
@@ -80,9 +71,6 @@ class Base:
 
         Args:
             dictionary (dict): Dictionary containing object attributes.
-
-        Returns:
-            Base: New instance created from the dictionary.
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
@@ -94,11 +82,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls) -> list:
-        """Load a list of objects from a JSON file.
-
-        Returns:
-            list: List of loaded objects.
-        """
+        """Load a list of objects from a JSON file."""
         filename = cls.__name__ + ".json"
         try:
             with open(filename) as fp:
@@ -129,11 +113,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls) -> list:
-        """Load a list of objects from a CSV file.
-
-        Returns:
-            list: List of loaded objects.
-        """
+        """Load a list of objects from a CSV file."""
         filename = cls.__name__ + ".csv"
         try:
             with open(filename, "r", newline="") as fp:
