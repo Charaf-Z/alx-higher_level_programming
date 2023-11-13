@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Module with a Base class and utility functions for working with shapes."""
-
 from json import dumps, loads
 from csv import DictWriter, DictReader
 import turtle
