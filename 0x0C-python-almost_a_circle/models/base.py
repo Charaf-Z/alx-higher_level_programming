@@ -140,7 +140,7 @@ class Base:
         turt = turtle.Turtle()
         turt.screen.bgcolor("#a6a6a6")
         turt.pensize(2)
-        turt.shape("turtale")
+        turt.shape("turtle")
 
         turt.color("#af0000")
         for rect in list_rectangles:
