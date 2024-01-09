@@ -34,7 +34,7 @@ const concat = async () => {
 
   try {
     const contents = handleResults(results);
-    fs.watchFile(process.argv[4], contents.join(''), err => {
+    fs.writeFile(process.argv[4], contents.join(''), err => {
       if (err) throw err;
     });
   } catch (error) {
