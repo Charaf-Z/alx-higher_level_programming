@@ -3,7 +3,7 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import State, Base
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -12,14 +12,15 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="Luisiana")
+    new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
 
-    luisiana = session.query(State).filter_by(name="Luisiana").one()
-    print(luisiana.id)
+    louisiana = session.query(State).filter_by(name="Louisiana").one()
+    print(louisiana.id)
 
     session.close()

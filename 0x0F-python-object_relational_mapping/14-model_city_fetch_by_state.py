@@ -3,7 +3,7 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import Base, State
 from model_city import City
 
 if __name__ == "__main__":
@@ -13,6 +13,7 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 

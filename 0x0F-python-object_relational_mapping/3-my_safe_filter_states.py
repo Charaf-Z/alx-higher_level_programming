@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT * FROM `states` WHERE BINARY `name` = %s", sys.argv[4]
+        "SELECT * FROM `states` WHERE BINARY `name` = %s", (sys.argv[4],)
     )
     [print(state) for state in cursor.fetchall()]
 

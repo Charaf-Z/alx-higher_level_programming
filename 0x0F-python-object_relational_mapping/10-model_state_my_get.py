@@ -3,7 +3,7 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import State, Base
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -12,12 +12,13 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True,
     )
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     state = session.query(State).filter_by(name=sys.argv[4]).one_or_none()
     if state is None:
-        print("Nothing")
+        print("Not found")
     else:
         print(state.id)
 

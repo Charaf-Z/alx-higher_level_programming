@@ -15,7 +15,7 @@ if __name__ == "__main__":
         WHERE cities.state_id = states.id
             AND states.name = %s
         ORDER BY cities.id""",
-        sys.argv[4],
+        (sys.argv[4],),
     )
     [print(state) for state in cursor.fetchall()]
 
