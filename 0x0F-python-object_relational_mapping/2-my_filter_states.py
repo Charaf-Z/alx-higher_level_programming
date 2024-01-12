@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     cursor = conn.cursor()
     cursor.execute(
-        "SELECT * FROM `states` WHERE `name` = '{}' ORDER BY `id`".format(
+        "SELECT * FROM `states` WHERE BINARY `name` = '{}' ORDER BY `id`".format(
             sys.argv[4]
         )
     )
