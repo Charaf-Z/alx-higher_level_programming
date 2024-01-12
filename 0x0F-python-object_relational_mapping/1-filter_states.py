@@ -9,7 +9,9 @@ if __name__ == "__main__":
     )
 
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM `states` WHERE `name` REGEXP '^N.*'")
+    cursor.execute(
+        "SELECT * FROM `states` WHERE `name` REGEXP '^N.*' ORDER BY `id`"
+    )
     [print(state) for state in cursor.fetchall()]
 
     cursor.close()
