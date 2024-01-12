@@ -10,14 +10,14 @@ if __name__ == "__main__":
 
     cursor = conn.cursor()
     cursor.execute(
-        """SELECT cities.id, cities.name, states.name
+        """SELECT cities.name
         FROM states, cities
         WHERE cities.state_id = states.id
             AND states.name = %s
         ORDER BY cities.id""",
         (sys.argv[4],),
     )
-    [print(state) for state in cursor.fetchall()]
+    print(", ".join([state[0] for state in cursor.fetchall()]))
 
     cursor.close()
     conn.close()
